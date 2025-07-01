@@ -1,0 +1,119 @@
+/* font import */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color vars */
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  --white: hsl(0, 0%, 95%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --d-blue-500: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  font-size: 13px;
+  width: 100svw;
+  padding: 2svh 5svw;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500; /* Normal weight - change to 600 for bolder on specific elements*/
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+  gap: 50px;
+  max-height: 80svh;
+  max-width: 90svw;
+}
+
+.sub-container {
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+  box-shadow: 5px 5px 10px var(--grey-400);
+  grid-template-areas:
+    "profilepic userinfo . ."
+    "headline . . ."
+    "subtext . . .";
+  padding: 20px;
+}
+
+.sub-container img {
+  border-radius: 50%;
+  border: 1px var(--grey-100) solid;
+  grid-area: profilepic;
+}
+
+.username {
+  font-weight: 600;
+  grid-area: username;
+}
+
+.title {
+  grid-area: title;
+}
+
+.user-info {
+  grid-area: userinfo;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "username"
+    "title";
+  gap: 0;
+  height: 40px;
+}
+
+.headline {
+  grid-area: headline;
+  font-weight: 600;
+}
+
+.subtext {
+  grid-area: subtext;
+}
+
+.item-1 {
+  grid-area: daniel;
+  background-color: var(--purple-300);
+  color: var(--white);
+}
+
+.item-2 {
+  grid-area: jonathan;
+}
+
+.item-3 {
+  grid-area: jeanette;
+}
+
+.item-4 {
+  grid-area: patrick;
+}
+
+.item-5 {
+  grid-area: kira;
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
